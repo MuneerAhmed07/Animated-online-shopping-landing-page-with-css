@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;500&family=Rubik:wght@400;500;600;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --bg-color: #f6e6d9;
+    --circle-color:  #f1c19d;
+    --text-color: #e99652;
+    --light-text-color:  #3b3631;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+
+/* Header section */
+
+.header {
+    width: 100%;
+    height: 80px;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideTop 1s ease forwards;
+}
+
+.header img {
+    width: 130px;
+}
+
+.navBar .navList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar .navList .navLink {
+    list-style: none;
+    margin: 0 15px;
+}
+
+.navBar .navList .navLink a {
+    display: block;
+    color: var(--light-text-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s ease-in-out;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 10px;
+
+}
+
+.navBar .navList .navLink.active {
+    background: linear-gradient(#fff, rgba(255,255,255,.2));
+}
+
+.navBar .navList .navLink:hover {
+    background: linear-gradient(#fff, rgba(255,255,255,.2));
+}
+
+.header .phoneNumber {
+    position: relative;
+    width: 150px;
+    text-align: right;
+}
+
+.header .phoneNumber::before {
+    content: "";
+    position: absolute;
+    top: -110px;
+    right: -110px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.header .phoneNumber span,
+.header .phoneNumber p  {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--light-text-color);
+}
+
+.header .phoneNumber span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Home container styling */
+
+.home-container {
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.left-col {
+    flex-basis: 58%;
+}
+
+.left-col .homeImg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left-col .homeImg::before {
+    content: "";
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 80px;
+    left: 170px;
+    border-radius: 50%;
+    background: var(--circle-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    z-index: -1;
+    animation: slideleft 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.left-col .homeImg img {
+    filter: saturate(150%) contrast(80%) drop-shadow(1px 20px 10px rgba(0,0,0,0.3));
+    height: 100%;
+    width: 80%;
+    object-fit: cover;
+    margin-left: 50px;
+    animation: scaleUp 1s ease forwards;
+    animation-delay: 1.8s;
+    opacity: 0;
+}
+
+/* Right Col */
+
+ .right-col {
+    flex-basis: 35%;
+    padding: 20px 10px;
+        animation: slideRight 1s ease forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+.title-container {
+    width: 70%;
+}
+
+.title {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+
+.title .span {
+    font-size: 1.1rem;   
+    color: var(--light-text-color);
+}
+
+.title h1 {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    font-size: 7rem;
+    margin-bottom: 20px;
+}
+
+.title h1 span {
+    position: absolute;
+     font-family: 'Pacifico', cursive;
+     font-size: 4rem;
+     bottom: -38px;
+     color: var(--text-color);   
+    transform: rotate(-30deg);
+     right: 30px;
+}
+
+.btnDiv {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.btnDiv .btn {
+    width: 70%;
+    background: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.btn h2, .btn span {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn h2 {
+    font-size: 1.6rem;
+}
+
+
+.btn span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.off {
+    width: 30%;
+    background: var(--circle-color);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        transform: translateX(-400px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
